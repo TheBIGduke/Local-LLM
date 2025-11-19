@@ -9,11 +9,11 @@
 ---
 ## 📝 Flowchart
 <figure style="margin:0; text-align:center; border:1px solid #eaecef; padding:6px; border-radius:6px;">
-  <img src="Images/Introduction/NUCLEO-H563ZI.jpg"
-       alt="Placa NUCLEO-H563ZI"
+  <img src="docs/Local-LLM-for-Robots.svg"
+       alt="Flow Chart"
        style="max-width:100%; height:auto;" />
   <figcaption style="font-size:0.9em; color:#6a737d; margin-top:4px;">
-    NUCLEO-H563ZI (STM32) — vista general de la placa.
+    Flow Chart
   </figcaption>
 </figure>
 <p align="right">
