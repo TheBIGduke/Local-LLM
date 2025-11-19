@@ -13,7 +13,7 @@
        alt="Flow Chart"
        style="max-width:100%; height:auto;" />
   <figcaption style="font-size:0.9em; color:#6a737d; margin-top:4px;">
-    Flow Chart
+    View the full Pipeline
   </figcaption>
 </figure>
 <p align="right">
