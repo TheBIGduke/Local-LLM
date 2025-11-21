@@ -14,7 +14,6 @@ ok()    { printf "\033[1;32m[OK]\033[0m %s\n" "$*"; }
 warn()  { printf "\033[1;33m[WARN]\033[0m %s\n" "$*"; }
 fail()  { printf "\033[1;31m[FAIL]\033[0m %s\n" "$*"; exit 1; }
 
-
 require_sudo() {
   if [[ $EUID -ne 0 ]]; then
     if command -v sudo >/dev/null 2>&1; then
@@ -34,29 +33,6 @@ install_apt() {
   ok "System packages installed."
 }
 
-ensure_snapd() {
-  if ! command -v snap >/dev/null 2>&1; then
-    log "snap not found. Installing snapd…"
-    $SUDO apt install -y snapd
-  fi
-}
-
-install_yq() {
-  if ! command -v yq >/dev/null 2>&1; then
-    log "Installing yq via snap…"
-    $SUDO snap install yq
-    ok "yq installed."
-  else
-    ok "yq already installed."
-  fi
-}
-
-download_models() {
-  log "Downloading/verifying models (this can take a while on first run)…"
-  bash "utils/download_models.sh"
-  ok "Model download/verify step completed."
-}
-
 create_venv_and_install() {
   log "Creating Python virtual environment…"
   python3 -m venv ".venv" || fail "venv creation failed."
@@ -68,23 +44,31 @@ create_venv_and_install() {
   ok "Dependencies installed."
 }
 
+download_models() {
+  log "Downloading/verifying models using Python..."
+  # We use the python binary from the venv we just created
+  if [[ -f ".venv/bin/python" ]]; then
+      ".venv/bin/python" utils/download.py
+  else
+      fail "Virtual environment python not found. Install failed."
+  fi
+  ok "Model download/verify step completed."
+}
+
 post_instructions() {
   cat <<'EOS'
 
 ────────────────────────────────────────────────────────────
-✅ Setup completed.
+Setup completed!
 
 Next steps:
   1) Activate the virtual environment:
-       source octy/.venv/bin/activate
-       # OR if you are already inside the folder:
        source .venv/bin/activate
 
-  2) (Optional) Run the models script anytime:
-       bash utils/download_models.sh
+  2) Run the assistant:
+       python -m main
 
-  3) You're ready to use the project.
-Tip: The cache lives in ~/.cache/octy or `$OCTOPY_CACHE` if set).
+Tip: The cache lives in ~/.cache/octy
 ────────────────────────────────────────────────────────────
 EOS
 }
@@ -92,10 +76,10 @@ EOS
 main() {
   require_sudo
   install_apt
-  ensure_snapd
-  install_yq
-  download_models
+  # Note: We no longer need ensure_snapd or install_yq 
+  # because we use python for downloading models.
   create_venv_and_install
+  download_models
   post_instructions
 }
 

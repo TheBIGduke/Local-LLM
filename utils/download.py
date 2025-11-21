@@ -71,7 +71,7 @@ def main():
         else:
             print(f"No items found for {section}")
 
-    print(f"\n✅ All models ready in {CACHE_DIR}")
+    print(f"\nAll models ready in {CACHE_DIR}")
 
 if __name__ == "__main__":
     main()
