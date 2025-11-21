@@ -61,10 +61,9 @@ if "__main__" == __name__:
 
     try:
         llm = OctybotAgent()
-        last_batt=llm.llm.get_info.set_battery(percentage=0.67),
-        print("Hola soy tu Agente vistual Octybot 🤖:")
+        print("Hola soy tu Agente virtual Octybot 🤖:")
         print("Prueba a decir 'ok robot' y darme una instrucción - Presiona (Ctrl+C para salir):")
-        print("(Ejemplos: '¿Dónde estoy?', '¿Cuál es tu batería?', 'Ve a la enfermería', '¿Cuándo fue la Independencia de México y cuál es mi batería?')")
+        print("(Ejemplos: '¿Quién eres?', '¿Cuándo fue la Independencia de México?')")
         while True:
             print("> Quieres preguntar algo: ")
             llm.main() 

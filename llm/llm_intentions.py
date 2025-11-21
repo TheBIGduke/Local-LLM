@@ -2,8 +2,7 @@ import re
 import unicodedata
 from typing import List, Dict, Any, Optional, Iterable
 from config.settings import FUZZY_LOGIC_ACCURACY_GENERAL_RAG
-from .llm_patterns import (COURTESY_RE, NEXOS_RE, SPLIT_RE, INTENT_RES, INTENT_PRIORITY, INTENT_ROUTING, 
-                           BEST_CONNECTOR_RE, MOVE_PREFIX_RE, TAIL_NEXOS_TRIM_RE, ARTICLE_PREFIX_RE)
+from .llm_patterns import (COURTESY_RE, NEXOS_RE, SPLIT_RE, INTENT_RES, INTENT_PRIORITY, INTENT_ROUTING)
 
 def norm_text(s: str, courtesy_flag: bool) -> str:
     """ Normalize text for matching:
@@ -18,25 +17,6 @@ def norm_text(s: str, courtesy_flag: bool) -> str:
     if courtesy_flag:
         s = COURTESY_RE.sub(' ', s)
     return re.sub(r'\s+',' ', s).strip()
-
-def extract_place_query(t: str) -> str:
-    """ From a text with a navigation intent, extract the place name or description.
-    E.g. "ve a la cocina y luego para en el salón" -> "cocina" """
-    t = norm_text(t, True)
-    # quita prefijo al inicio (ve/dirígete/dónde queda/etc.)
-    t = MOVE_PREFIX_RE.sub('', t, count=1).strip()
-
-    m = BEST_CONNECTOR_RE.search(t)
-    if m:
-        place = m.group(1).strip()
-    else:
-        # sin conector: corta la "cola" desde un nexo
-        place = TAIL_NEXOS_TRIM_RE.sub('', t).strip()
-
-    # opcional: quita artículo inicial (si tu GENERAL_RAG NO guarda artículos)
-    place = ARTICLE_PREFIX_RE.sub('', place).strip(" .,:;!?\"'")
-
-    return place
 
 def best_hit(res) -> Dict[str, Any]:
     """ From the result of general_rag.lookup (dict or list of dicts), return the best one (highest score)"""
@@ -58,14 +38,8 @@ def detect_intent(t: str, order: Optional[Iterable[str]] = None, normalizer=None
 
 def split_and_prioritize(text: str, general_rag) -> List[Dict[str, Any]]:
     """
-    From a text, split it into clauses (by connectors) and classify each clause
-    into an action type: "battery", "pose", "navigate", "general", or
-    "rag" (if a high-confidence GENERAL_RAG answer is found).
-    Return a list of actions with parameters, prioritizing short answers first.
-
-    E.g. "Por favor ve a la cocina y luego dime tu batería" ->
-    [{"kind": "battery", "params": {}},
-     {"kind": "navigate", "params": {"data": "ve a la cocina"}}]    
+    From a text, split it into clauses (by connectors) and classify each clause.
+    Since navigation is removed, this will mostly route to 'general' or 'rag'.
     """
     t = norm_text(text, True)
 

@@ -3,8 +3,8 @@ set -euo pipefail
 
 # ====== rutas fijas (relativas al propio script) ======
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
-MODELS_FILE="$SCRIPT_DIR/../config/models.yml"   # => src/LLM/config/models.yml
-CACHE_DIR="$HOME/.cache/Local-LLM-for-Robots"
+MODELS_FILE="$SCRIPT_DIR/../config/models.yml"   # => octy/config/models.yml
+CACHE_DIR="$HOME/.cache/octy"
 
 # ====== helpers ======
 have_cmd(){ command -v "$1" >/dev/null 2>&1; }
@@ -75,7 +75,7 @@ download_file_or_zip(){
 
 
 # ====== prerequisitos ======
-[[ -f "$MODELS_FILE" ]] || die "No se encontró $MODELS_FILE (esperado en src/LLM/config/models.yml)."
+[[ -f "$MODELS_FILE" ]] || die "No se encontró $MODELS_FILE (esperado en octy/config/models.yml)."
 have_cmd yq || die "Falta 'yq'. sudo snap install yq"
 mkdir -p "$CACHE_DIR"
 echo "[*] Usando catálogo: $MODELS_FILE"

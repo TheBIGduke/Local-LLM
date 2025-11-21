@@ -40,7 +40,8 @@ class LoadModel:
 
     def ensure_model(self, section: str) -> List[Path]:
         """ Ensure the model directory exists, return a List of paths or an error message """
-        base_dir = Path.home() / ".cache" / "Local-LLM-for-Robots"  #Generar una variable para Guardar el proyecto
+        # UPDATED PATH: using 'octy' instead of 'Local-LLM-for-Robots'
+        base_dir = Path.home() / ".cache" / "octy"  
         models = []
         values = self.extract_section_models(section)
         for value in values:     
