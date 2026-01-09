@@ -21,7 +21,7 @@ GPU_LAYERS_LLM = 0 #How many layers your model is going to use in GPU, for CPU u
 CHAT_FORMAT_LLM = "chatml-function-calling" #NOT recommended to change unless you change the model
 
 """Information - data"""
-FUZZY_LOGIC_ACCURACY_GENERAL_RAG = 0.70
+FUZZY_LOGIC_ACCURACY_GENERAL_RAG = 0.60 # Configure the priority of LLM over the RAG
 PATH_GENERAL_RAG = "config/data/general_rag.json"
 
 """Text-to-Speech"""
