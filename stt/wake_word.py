@@ -35,7 +35,9 @@ class WakeWord:
         self.variants = VARIANTS_WAKE_WORD
         
         #State Machine 
-        self.on_say = (lambda s: self.log.debug(f"{s}"))
+        # --- CHANGED FROM DEBUG TO INFO ---
+        self.on_say = (lambda s: self.log.info(f"{s}"))
+        # ----------------------------------
 
         grammar = json.dumps(self.variants, ensure_ascii=False)
         
@@ -91,7 +93,7 @@ class WakeWord:
                 send_mode_sync(mode = "TTS", as_json=False) if AVATAR else None
                 if self.listening_confirm and self.size > 0: # If I have the wake_word comfirm and I have something
                     return self.buffer_drain()
-                self.on_say("Hubo una detección pero no se confirmó, limpiando buffer")
+                self.on_say("Detection wasn't confirmed, clearing buffer...")
                 self.buffer_clear()
                 return
         
@@ -152,7 +154,7 @@ class WakeWord:
         Return all buffered audio (as a single bytes object) and clear the buffer.
         Operates atomically under `self.lock`.
         """
-        self.on_say("Envío Información a STT")
+        self.log.info("Audio sent to STT")
 
         with self.lock:
             data = b"".join(self.buffer)

@@ -1,4 +1,4 @@
-# audio/tts.py
+# tts/text_to_speech.py
 import torch
 import io
 import wave
@@ -30,11 +30,11 @@ class TTS:
         try:
             self.pa = pyaudio.PyAudio()
         except Exception as e:
-            self.log.error(f"Error al iniciar PyAudio: {e}")
+            self.log.error(f"Error while trying to start PyAudio: {e}")
             self.pa = None
 
         self.stream = None
-        self.log.info("Text-To-Speech Inicializado")
+        self.log.info("Text To Speech initialized")
 
     def synthesize(self, text: str):
         """Convert Text to Speech using Piper, return mono audio float32 [-1,1]"""
@@ -79,7 +79,7 @@ class TTS:
         self.start_stream()
 
         if self.stream is None:
-            self.log.error("No se pudo iniciar el stream de audio")
+            self.log.error("Audio streaming service couldn't be started")
             return
 
         # Convert float32 [-1..1] to int16
@@ -96,7 +96,7 @@ class TTS:
             try:
                 self.stream.write(chunk.tobytes())
             except OSError as e:
-                self.log.error(f"Error escribiendo el stream de audio: {e}")
+                self.log.error(f"Error while writing the audio stream: {e}")
                 break
 
             if amplitude_callback:
@@ -118,7 +118,7 @@ class TTS:
             try:
                 self.stream = self.pa.open(format=pyaudio.paInt16, channels=1, rate=self.sample_rate, output=True)
             except Exception as e:
-                self.log.error(f"Fallo al abrir stream de salida: {e}")
+                self.log.error(f"Error while trying to open the output stream: {e}")
 
     def stop_tts(self):
         """Stop the stream"""
@@ -133,7 +133,7 @@ class TTS:
         if self.pa is not None:
             self.pa.terminate()
             self.pa = None
-            self.log.info("Py audio terminado correctamente")
+            self.log.info("PyAudio ended successfully")
 
 
 
