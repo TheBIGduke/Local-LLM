@@ -72,7 +72,3 @@ SPEED_TTS = 1.0                  # Speech speed: 1.0 = Normal, 2.0 = Slow
 PATH_TO_SAVE_TTS = "tts/audios"  # Directory to save generated audio files
 NAME_OF_OUTS_TTS = "test"        # Base filename for saved audios
 SAVE_WAV_TTS = False             # Flag to save audio files to disk
-
-
-# --- Avatar Integration ---
-AVATAR = False                   # Enable/Disable visual avatar integration

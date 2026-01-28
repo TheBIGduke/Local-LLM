@@ -240,51 +240,7 @@ class Router:
 
 ---
 
-#### Avatar
 
-Enable a simple on-screen "avatar" to visualize the pipeline (wake word, STT, LLM, TTS).
-
-##### 1) Turn it on
-
-Open `config/settings.py` and set:
-
-```python
-AVATAR = True
-```
-
-##### 2) Grant access to your I/O
-
-The avatar uses your microphone and speakers. For setup notes (devices, permissions, troubleshooting), see the [Avatar README](avatar/README.md).
-
-##### 3) Start the avatar
-
-From your project root, either:
-
-**Run the full pipeline (recommended):**
-
-```bash
-python -m main
-```
-
-Or **run only the Wake Word test (for a quick check):**
-
-```bash
-python -m stt.wake_word
-```
-
-##### What you should see
-
-- **Idle Mode:** The ball appears blue and remains static with no deformation.
-- **Wake word detected:** The ball turns gold, indicating it is actively listening.
-- **STT running:** The ball deforms dynamically, following the waveforms of your voice input.
-- **TTS speaking:** The ball returns to blue and moves according to the output audio waveform.
-
-> [!TIP]
-> If the ball does not deform, you will see a message in the web interface. This usually means there is a configuration issue—please check the [Avatar README](avatar/README.md) for setup details.
-
-This will open a local HTML page (the avatar UI). Try the full flow: say **"ok robot, como te llamas"** and watch the indicators change.
-
----
 
 <h2 id="based-on">Based On</h2>
 
@@ -301,22 +257,7 @@ OctyVoice Engine extracts and modernizes the core STT/TTS pipeline with:
 For the full system, visit the [original repository](https://github.com/JossueE/Local-LLM-for-Robots).
 
 
-<h3 id="short-demo">Short Demo</h3>
 
-Here is a short demo of the Avatar system in action, showing how the visualization reacts when the wake word is detected and triggers the full interaction pipeline.
-
-<p align="center">
-  <a href="https://youtu.be/PP4M3LmFDbM" target="_blank">
-    <img src="https://img.youtube.com/vi/PP4M3LmFDbM/hqdefault.jpg" width="720" alt="Avatar Demo YouTube">
-  </a>
-</p>
-
-When the wake word is detected, the avatar changes its color and responds with speech.
-
-> [!NOTE]
-> This avatar system was originally developed by [TheBIGduke](https://github.com/TheBIGduke/OctoV)
-
-![Avatar Demo](docs/avatar/avatar.gif)
 
 
 ---
