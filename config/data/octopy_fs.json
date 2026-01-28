@@ -1,0 +1,180 @@
+{
+  "knowledge": [
+    {
+      "triggers": [
+        "qué es octopy",
+        "quienes son octopy",
+        "cuándo se fundó octopy",
+        "de dónde es la empresa octopy",
+        "historia de octopy"
+      ],
+      "answer": "Octopy es una empresa mexicana creada en el 2015, especializada en el desarrollo de software, hardware, inteligencia artificial y robótica aplicada a la vida real."
+    },
+    {
+      "triggers": [
+        "cuál es la fortaleza de octopy",
+        "qué hace especial a octopy",
+        "cuál es el valor principal de octopy",
+        "por qué elegir octopy"
+      ],
+      "answer": "Nuestra principal fortaleza es la capacidad de integrar software y hardware de forma estratégica, ágil y personalizada para resolver necesidades reales en diversas industrias."
+    },
+    {
+      "triggers": [
+        "qué son los robots de servicio",
+        "qué hacen sus robots",
+        "cómo funcionan sus robots de servicio",
+        "tipos de robots que fabrican"
+      ],
+      "answer": "Diseñamos y fabricamos robots que pueden ser anfitriones, asistentes o recolectores de datos. Se adaptan en imagen, funcionalidad y conversación, integrando voz, IA y sensores."
+    },
+    {
+      "triggers": [
+        "qué es marko",
+        "quién es el robot marko",
+        "descripción de marko",
+        "para qué sirve marko"
+      ],
+      "answer": "Marko es un robot promotor móvil con múltiples bandejas, diseñado para transportar productos y brindar un servicio inteligente e innovador para que los consumidores conozcan tu marca."
+    },
+    {
+      "triggers": [
+        "cuáles son las características de marko",
+        "qué tecnología tiene marko",
+        "qué tiene de especial marko",
+        "especificaciones de marko"
+      ],
+      "answer": "Marko es versátil, navega con precisión y seguridad, cuenta con un Voice Bot conversacional para dar información y realiza gestos faciales para humanizar la interacción."
+    },
+    {
+      "triggers": [
+        "cuáles son los beneficios de marko",
+        "ventajas de usar a marko",
+        "por qué contratar a marko",
+        "qué gano con marko"
+      ],
+      "answer": "Ofrece publicidad dinámica a distancia, conoce la opinión de clientes con encuestas en tiempo real, tiene un diseño resistente de fibra de vidrio y mejora la atención con su asistente conversacional."
+    },
+    {
+      "triggers": [
+        "dónde se puede usar a marko",
+        "casos de uso de marko",
+        "qué roles puede tener marko",
+        "ejemplos de uso de marko"
+      ],
+      "answer": "Marko puede actuar como mesero inteligente, anfitrión, promotor de marca, captador de leads, asistente educativo, host de eventos, promotor de higiene o asistente en puntos de venta."
+    },
+    {
+      "triggers": [
+        "qué es octytron",
+        "descripción de octytron",
+        "para qué sirve el robot octytron",
+        "quién es octytron"
+      ],
+      "answer": "Octytron es una solución tecnológica diseñada para que las marcas destaquen y conecten profundamente con sus audiencias en ferias, exposiciones y celebraciones."
+    },
+    {
+      "triggers": [
+        "qué características tiene octytron",
+        "qué hace octytron",
+        "funciones de octytron"
+      ],
+      "answer": "Octytron cuenta con navegación autónoma precisa, diseño resistente con acabado automotriz, Voicebot conversacional, gestos faciales, publicidad y branding personalizado."
+    },
+    {
+      "triggers": [
+        "qué es el robot mundialista",
+        "descripción del robot jaguar",
+        "robot con forma de jaguar",
+        "para qué sirve el robot mundialista"
+      ],
+      "answer": "Es un robot con estética imponente inspirada en un jaguar, diseñado para atraer miradas en estadios, centros comerciales y expos. Cuenta con navegación autónoma y agente de voz con IA."
+    },
+    {
+      "triggers": [
+        "qué funciones tiene el robot mundialista",
+        "qué hace el robot mundialista",
+        "características del robot mundialista"
+      ],
+      "answer": "Tiene una pantalla frontal de alto impacto para anuncios, navegación autónoma segura y módulos configurables para funcionar como guía, punto de información o registro."
+    },
+    {
+      "triggers": [
+        "cuáles son los beneficios del robot mundialista",
+        "por qué usar el robot mundialista",
+        "ventajas del robot mundialista"
+      ],
+      "answer": "Incrementa el flujo de personas, amplifica campañas mostrando promociones en tiempo real, optimiza la atención en eventos y refuerza la percepción de innovación."
+    },
+    {
+      "triggers": [
+        "qué es octybot",
+        "quién es octybot",
+        "descripción de octybot",
+        "para qué sirve el robot octybot"
+      ],
+      "answer": "Octybot es un robot tipo humanoide diseñado para elevar la participación en eventos. Su enfoque disruptivo ofrece una experiencia única que cautiva a los asistentes."
+    },
+    {
+      "triggers": [
+        "qué hace octybot",
+        "características de octybot",
+        "funciones de octybot"
+      ],
+      "answer": "Octybot interactúa directamente con el público, muestra contenido en su pantalla táctil frontal, dice frases personalizadas de bienvenida y puede entregar flyers o regalos en su bandeja."
+    },
+    {
+      "triggers": [
+        "dónde usar a octybot",
+        "casos de uso de octybot",
+        "en qué eventos sirve octybot"
+      ],
+      "answer": "Octybot es ideal para exposiciones comerciales, eventos corporativos, centros de convenciones y centros comerciales."
+    },
+    {
+      "triggers": [
+        "qué servicios de inteligencia artificial tienen",
+        "hacen desarrollo de IA",
+        "qué ofrecen de automatización",
+        "soluciones de machine learning"
+      ],
+      "answer": "Creamos soluciones de IA a la medida para automatizar tareas y analizar datos, utilizando modelos de lenguaje, visión por computadora y machine learning integrados en procesos reales."
+    },
+    {
+      "triggers": [
+        "qué son los voicebots de octopy",
+        "tienen chatbots",
+        "cómo funcionan sus bots",
+        "flujos automatizados"
+      ],
+      "answer": "Desarrollamos Voicebots y Chatbots inteligentes multiplataforma que comprenden y aprenden, así como flujos automatizados para centros de atención, logística y marketing."
+    },
+    {
+      "triggers": [
+        "qué es sen-035",
+        "para qué sirve la aplicación sen-035",
+        "software para la nom-035",
+        "qué es la nom-035"
+      ],
+      "answer": "SEN-035 es una aplicación web que ayuda a las empresas a cumplir con la norma mexicana NOM-035, identificando y previniendo factores de riesgo psicosocial en el trabajo."
+    },
+    {
+      "triggers": [
+        "cuáles son los beneficios de sen-035",
+        "por qué usar sen-035",
+        "ventajas de sen-035"
+      ],
+      "answer": "Ayuda a prevenir riesgos psicosociales, evitar multas por incumplimiento de la NOM-035, reducir el absentismo relacionado con el estrés y aumentar la retención de talento."
+    },
+    {
+      "triggers": [
+        "contacto de ventas",
+        "con quién puedo hablar para comprar",
+        "teléfono de ventas",
+        "correo de contacto",
+        "quiero una cotización"
+      ],
+      "answer": "Para ventas y cotizaciones, contacta a Isabel Berrones. Teléfono: +52 1 55 8354 7178. Correo: isabel.berrones@octopy.com"
+    }
+  ]
+}
